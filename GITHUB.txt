@@ -1,0 +1,71 @@
+GIT x GITHUB: password dan1el202
+
+Objetos fundamentais:
+- BLOBS = bloco básico de composição
+- TREES = armazenam blobs
+- COMMITS = 
+
+GIT: sistema de versionamento para controlar versões/gerenciar de projetos.
+
+GitHub: serviço online de hospedagem de projetos gerenciados pelo git.
+
+git init: comando dado no explorador de arquivos para inicializar o versionamento git/ VCS(Version Control System).
+
+git config --(global, local) = Determina as configurações do usuário que utiliza o projeto sendo "local" o arquivo atual e "global" todos os arquivos.
+
+git config --global user.name "meu nome": configura o dono do projeto sendo versionado.
+
+git config --global user.email "meu email cadastrado no github"
+
+git config --list: fazer a checagem se o progeto foi configurado corretamente.
+
+git add . =
+
+git commit -m "message": checkpoint das modificações, necessita de uma mensagem (sempre dar um commit em códigos funcionais, e após uma alteração significativa)
+
+git log: lista o histórico dos commits.
+
+git log --oneline : lista o historico de commits em uma única linha
+
+git log --oneline : lista as modificações
+
+git rm --cached <file> : remove o monitoramento de um determinado arquivo
+ 
+git init --bare: cria um repositório vazio que é usado como servidor
+ 
+git remote add nome path  : cria um repósitorio remoto
+
+git push name branch: "empurra" os arquivos para um repositório
+
+git pull: trás os dados de um repositório remoto para um local
+
+git branch
+
+HEAD: Estado atual do nosso código, ou seja, onde o Git os colocou
+
+Working tree: Local onde os arquivos realmente estão sendo armazenados e editados
+
+index: Local onde o Git armazena o que será commitado, ou seja, o local entre a working tree e o repositório Git em si.
+
+ /c/Users/danie/.ssh/id_rsa.pub
+
+https://devhints.io/git-log = link para as diversas opções de listagem que o git log proporciona
+
+O arquivo .gitignore é criado para que o git ignore os arquvis contidos nele
+
+Chave SSH = estabelece uma conexão segura e encriptada entre duas máquinas
+
+Ordem de publicação:
+
+1 - No terminal do diretório raiz: git init
+2 (opcional) - git status para conferir se algo precisa ser commitado
+3 - git add --all para subir os arquivos
+4 - git commit -m "message"
+5 - git remote add origin...endereço no repositório
+6 - git remote
+7 - git push -u original main 
+
+
+
+
+

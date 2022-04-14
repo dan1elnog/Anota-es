@@ -1,0 +1,441 @@
+MVC: Padrão de projeto
+
+Quando um usuário navega na web o primeiro parâmetro que ele encontra é o controller, que está conectado a uma view e a um model. View e model não se "conhecem". Divide a aplicação em 3 camadas.
+
+
+Model: responsável pelo acesso e manipulação dos dados da aplicação, onde está as funcões e acesso a API´s externas.
+
+View: respónsavel pela interface com o usuário, onde estão os arquivos html e css/ não deve conter lógica.
+
+Controller: respónsavel pela intermediação entre o Model o View.
+
+Router: responsável por criar as rotas.
+Route::get('/', nomedaclasse@ metodo do controller)
+Route do tipo "any": aceita qualquer tipo de verbo http
+Route do tipo "match": permite informar quais verbos http ela irá aceitar. Estrutura = Route::match(['get', 'post'], '/url')
+Route do tipo "redirect": Permite redirecionar de uma rota a outra dinâmicamente = Route::redirect('route1', 'route2') 
+Route::resource('url', Name::class) = estrutura alternativa para facilitar o acesso as rotas
+
+DI dependence Injection:
+Ultilizar a objetos de uma classe no parâmetro de uma função.
+
+Laravel(está na pasta documents):
+
+Para baixar o laravel é necessário o composer. Na linha de comando é preciso digitar "composer global require laravel/installer"/ para inicializar um projeto laravel basta selecionar o diretório desejado e dar o comando: laravel new nomeProjeto
+
+php artisan serve(cmd): usado para iniciar o servidor php
+Windows Subsystem for Linux (WSL) 
+
+Nunca se mexe na pasta Vendor.
+
+ORM(Object Relational Mapping) = Responsável por transformar código orientado a objeto em código SQL
+
+A requisição do usuário vai para o core do sistema laravel que é um arquivo despachante. 
+
+o arquivo routes/web.php é responsável pela elaboração das rotas.
+
+O 'artisan' ajuda na criação de diversos processos.
+
+Blade: sistema de tamplate do laravel.
+
+php artisan make:controller nome --resource: cria um controller
+php artisan migrate: cria as colunas estabelecidas na pasta migration
+
+
+Os arquivos HTML CSS e JS são deixados na pasta public
+
+Para trabalhar com o banco dados será necessário 3 arquivos:
+
+- .env: trás todas as caracteísticas do banco de dados
+
+- database.php: trás todas as configurações do banco de dados.(É necessário configurar o 'engine' para 'InnoDB' para se trabalhar com as relações entre tabelas.)
+
+- AppServiceProvider.php: (use Illuminate\Support\Facades\Schema;)    protected $table = 'oficina';
+
+- migrations: serve para versionar o Banco de dados da aplicação.
+	php artisan migrate: executa a migration
+	php artisan migrate: volta a última operação da migration
+	php artisan migrate:rollback --step=valor: volta n operações de migrations: 
+Fazem a migração de códigos em PHP para SQL
+php artisan migrate:status
+php artisan migrate:fresh = apaga e atualiza as tabelas do bancos
+php artisan make:model Models\\ModelNome -mc: cria uma model, controller e uma migration ao mesmo tempo.
+php artisan make:request Nome: cria uma requisição
+php artisan storage:link cria um link simbólico
+php artisan make:migration MigrationName --table=table : cria uma migration que configura/altera outra. 
+php artisan route:list = lista de exibição de rotas no laravel.
+php artisan route:cache = limpa o cache das rotas
+php artisan view:clear = limpa o cache das views
+php artisan tinker = abre o terminal do php
+composer-dump autoload: deve serrodado sempre que uma migration for deletada
+
+
+dd($) = vardump do laravel
+
+->save()= Utilizado para salvar dados no banco.
+name::create([array])= cria e armazana valores no banco de dados.
+name::query()->orderBy('value')->get() = realiza uma organização na exibição de dados.
+class::all()= Busca todos os dados de um banco
+@csrf( cross side request forged) = token usado para evitar um fake request
+
+É necessário preencher o fillable no model para evitar inclusão em massa de arquivos.
+O arquivo create deve ficar acima dos demais no web.php
+
+Diretivas:
+
+@yield('content')
+@extens('nome do layout')
+@section
+@endsection
+@if
+@unless
+@empty
+@auth/endauth = parte da página presente apenas para quem tem autorização/loggado
+@guest = parte da página presente para todos os usuários
+@switch
+@include('path') = inclui itens de outros arquivos na página.
+
+
+Impressões:
+
+{{$}} = irá passar a string como ela é (literal)
+{!!$!!} = faz a leitura da tags html/javascript
+{{ $var ?? 'value' }} = faz a verificação se existe uma variável, caso não exista ele imprime outro valor.
+
+Illuminate\Http\Request : Esta é a classe que representa uma requisição HTTP no Laravel.
+
+compact('var') = retorna um array para a view
+
+return redirect(view): POST-Redirect-GET 
+
+Flash messages: mensagens que duram apenas uma requisição Http
+
+Para manter os dados em um formulário mesmo após ele ser enviado de maneira errada basta escrever: value={{old('name')}}
+
+session = no http é possível guardar dados de um usuário e utiliza-los em novas requisições:
+$request->session()->flash()->('value, 'message')
+
+index = $var = $request->session()->get(value) 
+
+É possível criar parâmetros nas rotas.
+
+Na remoção é necessário informar o verbo http no formulário: 
+@method('DELETE')
+name::destroy($request->id)
+
+addslashes() = usado quando a risco de uma mensagem não ser passada.
+
+
+
+Request: a injeção de dependências do request é feita no store
+Model::all() = recupera todos os registros no controller
+
+now()->year() = pea o ano atual
+$request->all()
+$request->only()
+$request->has() = verifica se existe o valor indicado e retorna um boolean
+$request->except() = pega todos os valores exceto os discriminados 
+$request->file('name')->isValid() = confere se um arquivo é válido
+$request->file('name')->extension() = retorna a extensão do arquivo.
+$request->validate
+$request->url()= Retorna uma url.
+$request->get()= busca dados para adicionar os valores de formulários do blade (name) no banco de dados.
+$request->validate('field'=>'rules') usado para fazer a validação no store, onde o campo rules vai conter o nome do campo
+
+No form request é possível criar um public function chamada messages que retorna as mensagens de erro. (para regras genéricas em que houver muitas campos, basta escrever o nome do campo na message e usar :attribute como "parâmetro" para buscar o nome do campo)
+
+As relações entre tabelas no Laravel são feitas no Model através de métodos/ hasmany, hasone, belongsTo, belongsToMany.
+
+each() = para cada um dos elementos selecionados ele irá executar uma função.
+
+$var = Class::find($request->id);
+       $name = $var->name;         = recupera dados de um registro 
+
+
+Transações: indica que todos os comandos e querys executados dentro de uma transação só vão ocorrer se tudo estiver funcionando/ representado po DB::transaction()(function() use ())
+
+DB::beginTransaction()
+DB::transaction gerencia os casos de erro automaticamente, fazendo rollback em caso de erro para nós. Utilizando DB::beginTransaction e DB::commit, não precisamos conhecer funções anônimas e suas particularidades de escopo
+DB::commit() : realiza uma transação
+DB::rollback() = não finaliza um transação caso haja algum problema.
+
+Estrutura para a criação de pequenos textos em formulários:
+
+aria-describedby="id"
+<div id="" class="form-text">texto.</div>
+
+filesystem.php = arquivo que estão as configurações de upload no laravel.
+
+onsubmit="return confirm('question?')" = deispara um evento JavaScript, gerando uma confirmação de transação
+
+middleware = diretório responsável pelos filtros da aplicação
+
+Após criar um middleware com o artisan, basta adiciona-lo em Requests/Kernel, passar um array no web.php com a chave do middleware e escrever a verificação no miidware
+
+
+Uploads:
+
+Para fazer upload de arquivos é necessário colocar o parâmetro 'ectype="multipart/form-data" ' no form html.
+
+Usar o comando storage:link para criar um link simbólico entre o storage/plubic e o public
+
+Setar a model com o nome do input da imagem
+
+Métodos para selecionar o nome do arquivo
+getClientOriginalName()
+getClientOriginalExtension()
+
+Estrutura básica:
+
+$data = $request->all();
+        if($request->photo->isValid()){
+            $file = $request->photo->store('dir');
+            $data['image'] = $file;
+        }
+
+        Post::create($data);
+
+Estrurura para pegar o nome original do arquivo:
+$nameFile = Str::of($request->title)->slug('-').'.'.$request->photo->getClientOriginalExtension();
+
+Para o envio de um array via html basta adicionar "[]" no final do name do input
+
+Estrutura para autentificaçao de usuário:
+
+composer create-project laravel/laravel name
+
+composer require laravel/breeze --dev
+
+npm install && npm run dev : no terminal bash
+
+Rota para autentificação: 
+
+Route::middleware('auth')->group( function(){
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+});
+
+Autentificação no controller através do construtor:
+
+$this -> Middleware('auth')->only/except('function');
+
+
+Autentificação via nova página de login:
+
+ if(!Auth::attempt($request->only(['email', 'password']))){
+            
+            return redirect()->back()->withErrors('Erro ao tentar se identificar!');
+        }
+
+        return redirect()->route('series.index');
+    }
+
+Auth::check = verifica se um usuário esta loggado ou não
+Para senhas usar a criptografia com o hash():
+
+$data['password'] = Hash::make($data['password']);
+        $user = User::create($data);
+        Auth::login($user);
+
+Para redirecionar o usuário a tela de login, basta modificar o arquivo: 
+\App\Http\Middleware\Authenticate
+
+Factory:
+	 
+Usada para criar exemplos no banco de dados para depuração.
+
+php artisan make:factory name --model=modelName	
+
+factory(User::class, 10)->create();
+
+FormRequest:
+
+$id = $this->segment(segmento da url que represanta o id)
+
+'regex: regra' = validação para formatação de números 
+'unique:table'
+
+
+Filtros de busca:
+
+O primeiro passo é criar uma nova rota (search) e um novo método no controller
+(A rota deve ser do tipo any)
+
+Na exibição é necessário colocar um formulário. 
+
+Na model:
+
+
+ public function search($filter = null)
+    {
+        $result = $this->where(function($query) use ($filter){
+            if($filter){
+                $query->where('name', 'LIKE', "%{$filter}%" );
+                $query->where('id', 'LIKE', "%{$filter}%" );
+            }
+        })->paginate();
+
+        return $result;
+
+
+No controller:
+
+public function search(Request $request)
+    {
+        $filters = $request->all();
+
+        $products = $this->repository->search($request->filter);
+        return view('index',[
+            'product' =>  $products,
+            'filters' => $filters
+        ]);
+
+
+
+No blade: 
+
+@if(isset($filters))
+    {!!$product->appends($filters)->links()!!}
+@else
+    {!!$product->links()!!}    
+@endif 
+
+ <input type="text" placeholder="Search" name="filter" value="{{$filters['filter'?? '']}}">
+
+AdminLTE é um bom template
+
+Criação de seeder:
+
+1 - Criar um seeder
+2 - Especificar os campos com os valores que serão preenchidos
+3 - Chamar o seeder em DatabaseSeeder ($this->call(seeder::class)
+4 - Rodar o comando "php artisan db::seed"
+
+Para colher dados de um usuário loggado:
+
+dd(auth()->user())
+
+métodos:
+
+firstOrCreate: verifica se há um dado equivalente a solicitação
+
+Testes automatizados: vendor/bin/phpunit
+
+Api: localizado em api.php
+
+Todas as rotas devem posuir o pré-fixo Api
+
+Para fazer o deploy:
+
+O comando composer install é utilizado para baixar todas as dependências do projeto
+O comando php artisan key:generate gera uma nova chave para criptografar os dados sensíveis
+No arquivo .env, a propriedade APP_ENV deve ser prod e APP_DEBUG deve ser false
+
+Disparo de emails:
+
+php artisan make:mail name: cria uma clase de email
+Criar uma rota e uma view para o email
+
+O laravel disponibiliza um facilidade na hora de criar os emails, gerando eum template html pronto. Basta trocar o método view para o método markdown na função build() da classe de email.
+
+Para passar parâmetros para o template do email é necessário criar um atributo público na classe de email, e passa-lo no construtor. Após esse processo é necessário acrescentar o parâmetro nas rotas.
+
+Configurar o arquivo .env com os as configurações do mailtrap
+
+Criar uma rota para envio de email
+
+Na rota: 
+	
+$email = new Email(par1, par2, par3); 
+        
+        $email->subject = 'Title';
+        $user = (object)[
+            
+            'email' => 'daniel@teste.com',
+            'name' => 'Daniel Martins'
+        ];
+        Mail::to($user)->send($email);
+        return 'check';
+
+Para adicionar o envio de email ao salvar um dado no banco, basta utilizar o metodo store e passar os dados de envio de email
+
+Servidores smtp possuem limitação de email que podem ser enviados por segundo
+
+Fluxo de envio de email: 
+
+- Conectar a um servidor de SMTP
+- Ferramenta de email transacional
+
+Fila de Processos(síncrono x assíncrono): queue
+payload: como o processo é executado
+
+Processo síncrono: realiza a ação de uma só vez
+
+- Servidor recebe uma solicitação
+- Manipula o que o cliente espera
+- Entrega o pedido
+
+Criar um processo assíncrono: realizaas ações em uma fila de execução
+
+1 - config/queue = lista de drivers disponíveis
+2 - Mudar o queue connectian no .env para database
+3 - Criar uma tabela de jobs (queue:table)
+4 - Criar uma tabela de falha (queue:failed-table)
+5 - Mudar de "send" para "queue" o código de envio de email
+6 - Rodar o comando php artisan queue:listen para rodar a fila de execução
+7 - No controller fazer a trocadométodo de envio de queue para later
+8 - Criar uma variável para adicionar os segundos e passa-la como primeiro parâmetro do método later.
+9 - Para processar novamente um processo em fila que falhou:
+php artisan queue:retry ID
+php artisan queue:retry all
+
+Events:
+
+No EventServiceProvider é feita a configuração dos listeners.
+
+php artisan event:list = retorna uma lista com todos os events e listeners que a aplicação possui.
+
+Para lançar um evento:
+1 - Criar um evento
+2 - Configurar os atributos da classe(como public) e o método construtor
+3 - Intanciar uma variavél com os parâmetros do construtor  
+4 - Passar a variavél como parâmetro do método event()
+5 - Criar um listener 
+6 - php artisan make:listener Nome -e RegisterNewSerie
+7 - Implementando a interface ShouldQueue, o Laravel entende que deve colocar a execução deste listener para ser processado de forma assíncrona.
+
+Jobs: 
+
+php artisan make:job name
+
+São formas de processamento que são utilizados para trabalhar com filas de forma síncrona ou assíncrona, deve ser utilizado quando o processo que a gente está tentando executar, faz parte diretamente da ação que a gente está executando/Implementa a ShouldQueue
+
+API: php artisan make:controller ApiController --api
+
+Lumen: micro-framework do laravel, usado para o ganho de performance da aplicação
+
+Para fazer testes no Postman deve ser utilizado o var_dump()
+
+Uma boa prática com API´s é criar um BaseController com um atributo protegido $class, e usa-la como classe progenitora para osdiferentes controllers criados. Basta definir o nome do controller no método contrutor
+
+GET: return Model::class(all())
+POST: return response->json(Model::create('value'=>$request->value))
+PUT:  $data = Model::find($id);
+        $data->fill($request->all());
+        $data->save();
+DELETE: Model::destroy($id)
+
+Para mudar o acesso a atributos, basta utilizar os accessors e mutators, e informar na model que um atributo extra irá ser preenchido (protected $appends).
+
+A API aceita paginação dos resultados.
+HATEOS: Hipermídia, motor do estado da aplicação/ Informa como um cliente pode navegar em uma aplicação
+
+
+
+
+
+
+

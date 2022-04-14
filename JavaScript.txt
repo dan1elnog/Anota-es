@@ -1,0 +1,150 @@
+Linguagem nativa da web
+
+DOM = Document Object Model : conjunto de objetos dentro do navegador que dão acesso a recursos dentro de um web-site/como o navegador enxerga o HTML utilizado por ele para renderizar a página
+
+Eventos Dom: representa tudo aquilo que pode ocorrer com um elemento DOM.
+function action(){}: linhas de código(bloco) que irão funcionar a partir de um evento.
+mouseenter:
+mousemove:
+mouseout:
+mouseup:
+mousedown:
+click:
+onload: evento disparado no Load da página 
+
+var.addEventListener('event', function) = função nomeada
+var.addEventListener('event', function(){}) = função anônima, cumpre o mesmo propósito, mas só pode ocorrer em um momento
+
+O comportamento padrão de um bortão no Javascript é coletar dados dos inputs e envia-los para uma página de destino. Caso não exista essa página o procedimento a seguir deve ser realizado:
+
+var.addEventListener('event', function(event){
+    event.preventDefault()
+})
+
+
+
+Árvore DOM =
+
+- window: é a raiz do java script no site, todo relacionado a ele se encontra nela.
+	- location: corresponde a URL do site, página atual ou anterior.
+	- document: documento atual.
+	- history: histórico de navegação.
+
+Métodos de Acesso a elementos do DOM:
+Ao invés de escrevermos toda vez document.querySelector podemos criar uma função que funciona como atalho para ele:
+ function buscaElemento(seletor) {
+        return document.querySelector(seletor);
+    }
+getElementsByTagName('')[index]: 
+getElementById()
+getElementsByClassName() 
+var.querySelector('tagHTML#id') = sempre retorna apenas um elemento
+querySelector() = retorna um array com todos os elementos selecionados 
+
+ps: quando finalizar com element no plural é necessário usar o index.
+
+.innerText x innerHTML = usados para reproduzir um elemento selecionado pelos get's. 
+.src = 'photoPath.png' : usado para trabalhar com imagens
+var.style.textAlign = "center"
+ 
+
+document.write() = escreve algo no documento html
+var.style.background = 'color' : altera a cor do background de um elemento selecionado.
+
+Estrutura para a criação de um novo elemento Html:
+document.createElement('tag')
+tag.setAttribute('id', 'nome')
+
+alert('link') = exibe uma mensagem ao abrir uma página.
+window.open() = Abre uma nova aba no navegador do usuário
+confirm('') = exibe uma confirmação.
+prompt('') = mostra um input.
+number.parseInt(var) = converte uma string em inteiro.
+number.parseFloat(var)
+Number()
+string(n) = converte um valor inteiro em string
+n.toString()
+array.length = mostra o tamanhode um array
+s.toUpperCase()
+s.toLowerCase()
+.toFixed(value): usado para formatar um numero indicando no value o número de casas decimais.
+.toLocaleString('pt-BR', {style: 'currency', currency 'BRL'}): usado para formatar um número coma moeda brasileira.
+.textContent: seleciona o conteúdo de texto de uma tag
+.classList.add(): os estilos css devem ser mantidos nos arquivos css. Para tal é necessário fazer uma chamada com esse método.  
+
+
+Tipos de Dados: typeof var
+debugger: usado para parar a execução de um programa naquele instate.
+
+
+- number
+	- Infinity
+	- NaN
+- string
+- boolean
+- null
+- undefined
+- object
+	- array
+- function
+
+template string: formatação de uma string
+
+`crase ${var}`  
+
+
+var.map(item => function) = usado quando se deseja criar um novo array a partir de um arrat, mantendo a mesma quantidade de itens porém transformados.
+
+var.filter(item => function) = usado para criar um novo array que possua os valores "validados" na função
+
+var.reduce((accumulator, item) => function) = usado para reduzir os itens de um array a uma valor único. Sempre retorna um valor
+
+com a extensão Node exec basta apertar f8 para rodar o node no vsCode.
+
+var = new Date = instância de horas no JS.
+.getFullYear
+
+"+" = operador de concatenação
+
+
+Variáveis =
+
+- Const
+- var
+- let
+
+Array =
+
+array.push() = adiciona um valor no array
+array.splice() = remove itens(s) da lista
+
+
+Api(Aplication Programming Interface):
+
+- Facilita a comunicação entre componentes de um sistema.
+- Melhor qualidadee serurança de um software.
+
+
+Formulários:
+
+Para coletar dados de um formulário basta usar o querySelector no formulário e através dele os inputs com os seus 'names': console.log(var.name.value)
+
+for.reset() = função que limpa os dados de um formulário após o envio dos dados
+
+link para iniciar uma conversa no whatsapp via JavaScript
+https://wa.me/5511númerodecelular?text=message 
+
+Para criar um objeto em java script: usado quando um objeto possui propriedades semelhantes
+
+var name = {
+ 
+    key: value
+}
+
+Para acessar as propriedades de um objeto: object.value
+
+
+
+
+
+

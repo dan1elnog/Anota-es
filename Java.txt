@@ -1,0 +1,123 @@
+Java:
+
+A portabilidade é um ponto forte da linguagem.
+
+Pode ser usada tanto para computadores quanto para dispositivos menos sofisticados: cafeteiras, geladeiras ou quaisquer dispositivos que podem ser controlados por software.
+
+Sistema operacional para smartphones a linguagem Java é uma linguagem “nativa”.O Google disponibilizou a linguagem Java para a programação de aplicativos para Android.
+
+Independe de plataforma: write once, run everywhere;
+
+Mais rápida que uma linguagem de script, mas mais lenta que uma linguagem compilada pura.
+
+Seu ambiente possui dois componentes:
+- JVM - Java Virtual Machine
+- Conjunto de bibliotecas que disponibilizam classes comuns
+
+A tecnologia Java é composta por três plataformas:
+1. J2SE ou Java SE (Java Standard Edition): base da plataforma, inclui o ambiente de execução e as bibliotecas comuns;
+2. J2EE ou Java EE (Java Enterprise Edition): versão voltada para o desenvolvimento de aplicações corporativas e aplicações web;
+3. J2ME ou Java ME (Java Micro Edition): versão voltada para o desenvolvimento de aplicações móveis ou embarcadas.
+
+Java Development Kit : visa compilar e executar as aplicações java
+ x 
+Java Runtime Environment : inclui a JVM
+
+Seus programas passam por 5 etapas:
+
+Editar -> Compilar(JavaC) -> Carregar -> Verificação de Bytecode -> Execução
+	 (Gera um arquivo
+	  bytecode 
+	  .class)
+	
+O primeiro método executado é sempre o comando "main".
+O método main é responsável por criar os objetos e realizar a combinação de diferentes classes para atender às necessidades de um sistema
+
+System.out.println() = exibe algo no terminal e pula para a próxima linha.
+Double.parseDouble(sc.nextLine()) = converte string em double
+nextLine() = recolhe entradas dos usuários
+
+"+" = operador de concatenação
+
+
+Possui 8 tipos Primitivos e 1 especial:
+
+- Boolen
+
+- Char(Possui apenas uma letra)
+
+- Integer (Diferenciados pela quantidade de bits armazenados na memória)
+    
+			  Escopo
+    - byte  (1B)    -2^7 . . . . 2^7 - 1
+    - short (2B)    -2^15 . . . . 2^15 - 1
+    - int   (4B)    -2^31 . . . . 2^31 - 1
+    - long  (8B)    -2^63 . . . . 2^63 - 1	
+- Reais
+    
+    - Float  (Menor precissão 4B)
+    - Double (MAior precissão 8B)
+
+- String (Especial / Declarado com letra maiúscula por ser uma classe)
+    Dentro de uma String é possível usar os facilitadores: 
+	%d inteiro
+	%e float
+	%s string
+	
+
+Declaração de Constante: final type VAR
+
+
+Java sempre realizará a operação inteira quando os operandos forem inteiros, e a operação real ocorrerá caso um ou mais operando seja real.
+
+Ordem de precedência de operadores lógicos: !, &&, || 
+
+
+Classe Scanner: Usada pra fazer requisições no terminal
+
+1 - import java.util.Scanner
+2 - instanciar um objeto da classe scanner:  
+        Scanner nome = new Scanner(System.in);
+3 - Fazer a conversão de valores de entrada Float e Integer(String não é necessário): 
+ 
+double nota1;
+nota1=Double.parseDouble(nome.nextLine());
+
+Ou
+
+int idade;
+idade = Integer.parseInt(entrada.nextLine());
+
+
+OOP = A programação orientada a objetos tem como principal conceito representar, em um sistema computacional, um objeto da vida real.
+
+Dizemos que os objetos só existem “em tempo de execução”.
+
+classe name = new _construct()
+
+O construtor não retorna nenhum valor / Possui o mesmo nome da classe
+
+Os métodos setters não retornam parâmetro(void)
+
+A assinatura de um método é determinada pelo tipo de parâmetros e pela ordem em que estes foram declarados.
+
+Polimorfismo de sobrecarga de métodos: A sobrecarga de métodos permite que possamos ter mais de um método com o mesmo identificador em uma mesma classe.
+
+O processo de compilação de uma classe cria um método construtor vazio quando não for encontrado nenhum método construtor
+
+Sobrecarga de Métodos construtores:
+
+Quano uma classe é implementada sem a presença de métodos construtores, é possivel fazer a implementação do mesmo ultilizando o construtor vazio
+
+
+
+
+
+
+
+
+
+
+
+
+

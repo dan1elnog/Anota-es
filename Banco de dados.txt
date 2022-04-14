@@ -1,0 +1,135 @@
+BANCO DE DADOS: Surgiu na déc de 60
+
+DDL (data definition language)
+DML (data manipulation language)
+DQL (data query language)
+
+Registros -> Tabelas -> Arquivos
+Registro = linha = tupla
+constraint = parâmetro.
+default charset = utf8 : usado no fim de uma criação para definir o conjunto de caracteres padrôes.
+Os nomes dos campos vão entre crases.
+Result-set = resultado de uma instrução.
+Dump = back-up de um banco dados.
+InnoDB: mecanismo que auxilia na criação de tabelas 
+Transação: toda ação que um BD pode tormar quando é solicitado
+ACID: 4 regras para uma boa transação.
+(Atomicidade: Ou uma tarefa é concluida ou nada é feito.
+ Consistência: um banco de dados deve permanecer consistente após uma transação
+ Isolamento: as transaçõesnaão podem afetar a outra
+ Durabilidade: uma transação deve ser duravél. )
+Integridade Referencial: não é possível apagar umatupla depois dela ser aplicada como chave estrangeira 
+
+
+Possui: 
+
+- Base de Dados
+- SGBD (DMS)
+- Linguagem de Exploração
+- Programas Adicionais 
+
+Modelo hierárquico X Modelo em Rede 
+
+Tipos Primitivos:
+
+- Numérico = 
+	Inteiro = tinyint, smallint, int, mediumint, bigint.
+	Real = decimal, float, double, real.
+	Lógico = bit, boolean
+
+- Data / Tempo = date, datetime, timestamp, time, year.
+
+- Literal =
+	Caractere = char, varchar
+	Texto = tinytext, text, mediumtext, longtext 
+	Binário = tinyblob, blob, mediumblob, longblob (armazena qualquer tipo de arquivo em binário).
+	Coleção = enum, set (permite a configuração dos valores desejados).	
+
+ - Espacial = geometry, point, polygo	
+
+O banco de dados trabalha com uma maior presisão, por isso os tip primitivos devem ser bem especificados.
+
+Terminal MySQL:
+
+_show databases; = mostra bancos de dados.
+_status; = mostra informações sobre os bancos de dados em execução.
+_show tables;
+_use;
+_describe(desc)    
+_show create table nome
+
+
+
+CREATE DATABASE nome; = cria um banco de dados.
+CREATE TABLE nome(): = cria uma tabela.
+USE nomedobanco = seleciona um banco de dados.
+DESCRIBE nomedatabela = descreve os detalhes de uma tabela.
+DROP DATABASE nome = exclui um banco de dados.
+PRIMARY KEY() = evita a repetições de dados nas tabelas.
+FOREIGN KEY = chaves primarias importadas de outras entidades  
+INSERT INTO table VALUES = adiciona valores a uma tabela no banco de dados, 
+se os valores adicionados seguirem a mesma ordem dos campos não é necessário descrimina-los no começo
+ALTER TABLE tabela = altera a estrutura de uma tabela
+add column coluna constraint = aliado ao alter table adiciona uma coluna a uma tabela
+drop column coluna = retira uma coluna de uma tabela
+-- after coluna = adiciona uma campo após outro campo pré-definido
+first = adiciona uma coluna na primera posição de uma tabela 
+modify column nome constraint = modifica uma configuração de um campo
+change = modifica o nome da coluna
+rename to = modifica o nome da tabela  inteira  
+add primary key()
+aad foreign key (nomedacoluna) references tabela(colunadatabela)
+UPDATE nome SET nome = 'novo-nome' WHERE = estrutura de uma atualização de registros
+DELETE FROM nome WHERE constraint = apaga um registro de uma tabela.
+TRUNCATE nome-tabela = apaga todos os dados de uma tabela
+ORDER BY campo 
+DISTINCT : considera maocorrência em um grupo de tuplas.
+HAVING: só trabalha com campos selecionados pelo agrupamento, pode incluir valores de outras querys copiando toda a query e colocando-a entre parênteses/ usado quando se deseja filtrar dados depois de agrupa-los.
+LEFT JOIN X INNER JOIN X RIGHT JOIN
+LEFT JOIN: mostra todos os dados a esquerda do join
+RIGHT JOIN: mostra todos os dados a direita do join. 
+
+SELECT 
+    table1.coluom
+    table2.coluom
+FROM table1
+LEFT JOIN table2
+ON table1.coluomWeWant = table2.coluomWeWant:
+
+
+CREATE VIEW nomedaview AS query SQL: cria uma nova view, que é uma facilidade de acesso a dados de uma dada tabela.
+CREATE OR REPLACE nomedaview as query SQL: atualiza as busacas de uma view.
+DROP VIEW nome: apaga uma view.
+
+OPERADORES:
+
+WHERE campo BETWEEN valor1 AND valor2: cria uma query que busca vsalores em um dado intervalo.
+WHERE campo IN (valor1, valor2, valor3): cria uma query que busca os registros em uma lista pré-estabelecida.
+LIKE 'letra%' = filtra abusca para valores com a primeira letra igual a letra antes do porcento.
+(white card : % = nenhum ou vários caracteres / _ = cria a exigência que haja um valor na posição)
+
+AGREEGETED FUNCTIONS:
+
+_COUNT()
+_MAX()
+_MIN()
+
+
+
+CONSTRAINT:
+
+- not null: obriga preencher os campos de uma tabela com valores
+- default(padrão) '': se nenhum valor for digitado o valor seráo default
+- auto_increment: cria um contador único para cada registro. 
+- unique: não permite colocar valores iguais em uma registro
+- unsigned = retira o sinal de um tipo int economizando 1 bit de cada registro
+
+MODELO RELACIONAL:
+
+_Entidade
+_Atríbutos
+_Relacionamento
+_ Cardinalidade(muitos-para-muitos / um-para-um / um-para-muitos)
+(Para aplicar o modelo relacional a uma relação m-p-m basta criar uma tabela que receba as duas chaves primararias como chaves estrangeiras das tabelas que irão se relacionar )
+
+

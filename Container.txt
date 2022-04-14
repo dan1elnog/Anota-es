@@ -1,0 +1,7 @@
+Laradock
+
+1 - Instalar o Cmder caso esteja no windows
+
+2 - clonar o repositório do laradock no terminal
+
+3 - Criar um arquivo .env

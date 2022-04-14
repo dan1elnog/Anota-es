@@ -1,0 +1,357 @@
+Para configurar o php como uma variável de ambiente, basta copiar o caminho de no explorador de arquivos e colar no PATH das variáveis de ambiente.
+
+DRY = Don't repeat Yourself
+
+Stack(pilha): pilha de execução de um programa.  
+
+Váriaveis globais X Váriaveis Locais
+
+Váriaveis de Váriaveis:
+
+$var = var1;
+$$var = 2;
+echo "{$var}";
+var1
+echo "{$va1}"
+2
+
+VÁRIVEIS GLOBAIS:
+$GLOBALS
+$_SELVER:
+$_GET[]: uma substituição para buscas via web.
+
+sub-rotina: tudo que é necessario ser processado dentro de uma função, é realizado na própria função (não retorna valores).
+função: retorna valores.
+
+Funções = uma váriavel reconhece apenas os valores que foram passados como parâmetros.
+
+sizeof(): conta a quantidade de termos em um array.
+pow(): potência.
+round(): arredondamento,
+intval(): valor inteiro da váriavel,
+number_format: formatação de número,
+print_f(%s ou %f, $var1 , $var2): escreve algo formatado,
+- %d: valor decimal (positivo ou negativo)
+- %y: valor decimal sem sinal(apenas positivo)
+- %f: valor real
+- %s: string
+print_r/var_dump/var_export($var): mostra os indices de um vetor com seus respectivos valores (util na fase de testes de um programa) 
+wordwrap($var, n/de caracteres, "<br>\n"): cria quebras de linha dentro de um código 
+strlen($var): mostra o tamanho de ums string
+trim($var): desconsidera os espaços extras de uma string(ltrim: desconsidera os espaços a esquerda/desconsidera os espaços a esquerda )
+str_word_count($var,x): mostra a quantidadede palavras em uma string
+- 0 = conta a quantidade de palavras
+- 1 = cria um vetor com as palavras de uma string
+- 2 = cria um vetor mantendo o posicionamento de cada palavra dentro de uma string,
+explode(caractere de separação, $var): cria um vetor através do caracter de separação 
+str_split: pega cada letra de uma palavra e joga dentro de um índice de um vetor.
+implode/join(caracter de junção, $var): junta itens de uma vetor de caracteres separados pelo caractere de junção
+chr(código): mostra o caractere que determinado código representa
+ord(): mostra o código ASCII da letra
+strtolower(): transforma as strings de uma cadeia de caracteres em minúsculas
+strtolupper(): transforma as strings de uma cadeia de caracteres em maiúsculas
+ucfirst(): coloca a primeira letra em maiúsculo
+ucwords(): primeira letra das palavras em maiúsculas
+strrev(): escreve o inverso de uma função
+stripos($var,"string"): retorna a posição de uma string 
+substr_count($var, "string"): retorna a quantidade de ocorrências de uma string
+substr($var, posição, quantidade de letras): cria uma sub string de uma string
+str_pad()$var, n/de posiçôes, o que será composto, STR_PAD_RIGHT/LEFT/BOTH): faz com que uma string ocupe um espaço pré-programado
+str_repeat(string, quantidade): repete uma string n vezes
+str_replace(valor 1, valor 2, $var): troca o valor1 pelo valor2 
+str_ireplace(valor 1, valor 2, $var): troca o valor1 pelo valor2 ignorando suas pendências 
+range(primeira posição, ultima posição,passo): cria um array com a possibilidade de pular valores. 
+unset($var[índice]): desloca o valor na posição desejada
+exit(): para o código a partir de um ponto.
+function $x(type $y): type = É possivel informar o tipo de dados que se espera receber e informar
+list($var => 'indice'): atribui/pega valores especificos de um array a uma variavel que pode ou não ser chamada.
+sort(): ordena um array.
+array_search($elemento, $array)= retorna a posição de um elemento dentro do array
+array_diff(): retira a diferença de valores entre dois arrays.
+array_key_exists("chave", $array): verifica se há um valor no array.
+filter_var($var, filter) = usado para validar dados.
+
+  
+$variavel++: para acrescentar um 1.
+<br/>: tag para quebra de linha.
+.number_format: formata um valor inteiro.
+pós-incremento/pós-decremento x pré-incremento/pós-decremento. 
+#,//,/*,*/: são usados como comentário.
+Quando se coloca o "&" na frente da variável, cria-se uma variável referenciada.
+variáveis de variáveis:
+$$ var: criauma variável a partir de outra variável 
+Operador Unário: expressão? verdadeiro : falso>
+"===": operador que indica se as variáveis são iguais e do mesmo tipo.
+xor : é o ou exclusivo, ou uma premisa é ou não é, não pode haver duas premissas verdadeiras.
+"!": operador lógico not.
+Blocode códigos são colocados entre chaves {}.
+for(start; stop; step){}.
+"continue": irá pular uma interação dentro de um loop.  
+Nos "Arrays associativos" é possível criar um array com varios indices indicados pela sinal: "=>" gerados por uma chave.
+FOREACH: usado para referenciar um valor associativo em um array
+foreach(arrayassociativo as $indice => 'valor'){}
+Para adicionar novos itens em um array associativo basta utilizar a formatação: $lista[indice]=$item
+No caso de arrays numéricos $lista[] = $item(Que irá para o próximo índice numérico disponíve)
+arrays associativos funcionam apenas com valores: inteiros e strings
+
+Para fazer a integração php e HTML basta utilizar a nomeação do input no parâmetro $_GET(). 
+
+A função date() adota o ano atual, os parâmetros "y" para ano reduzido e "Y" para o ano completo.
+isset() define a relação se há um parâmetro ou se algo foi configurado.
+
+É possível acessar o item de uma lista através de seu índice ($i) em um loop "for" / caso não seja possível saber o número de elementos de uma lista, basta usar a função count()
+'function nomefuncao($parâmero){}' cria sub-rotinas no meu código (funções específicas).(Uma função pode receber ou não parâmtros)
+
+Condições de multípla escolha: usa-se a estrutura do "switch,case, break e defaut" 
+
+A propriedade <span> pode ser utilizada para criar um estilo para partes do meu "echo"
+
+Para ultilizar multiplos "cases" com o mesmo valor, basta escrever um abaixo do outro separado por ":" 
+
+Estrutura de repetição com teste lógico no final: "do{}while().
+
+casesensitive: sensível a formatação da letra.
+
+Funções com parâmetros dinâmicos: usado para funções com multiplos parâmetros.
+funções de auxilio: func_get_args() seleciona os argumentos estabelecidos e os coloca dentro de um vetor / 
+func_num_arg() conta a quantidade de argumentos passados para a função. 
+function nome(&$var) = faz a passagem de parâmetro por referência, modificando o valor da variavel conforme manipulação na função.
+
+include = faz a importação de funções de outros arquivos para dentro de um arquivo arbitrariamente selecionado.
+
+require = possui a mesma utilidade do include, porém se a função ou arquivo requerido não for encontrado,
+ele irá parar o código naquele instante (cria uma obrigatoriedade de requisição)
+
+include_once / require_once: realiza a inclusão de um arquivo externo apenas uma vez.
+
+Utilizando-se a tag "<pre></pre>" antes de un script php com um array, será exibido o array de forma organizada.
+
+<?= : usado para referenciar um echo e um documento html
+
+Fatal error: quando acontece uma exception e naõ é possível resolve-la(mata um processo).  
+try{}catch(){}: estrutura para o lançamento de exceptions e erros.
+multicatch '| pipe': usado para realizar o tratamento e multiplos erros em uma so estrutura.
+
+Métodos herdados da classe progenitora.
+$variavel-> getmessage(): informa o erro de execução.
+$variavel-> getline(): informa a linha do erro.
+$variavel-> getfile(): informa o arquivo do erro.
+// -> getTrace(): informa o caminho do erro.
+
+Throwable: Essa interface é a base da hierarquia de erros e exceções do PHP. Nós não podemos implementá-la diretamente, mas todas as exceções e erros implementam, mesmo que indiretamente, essa interface define apenas erros
+
+@ = operador de supressão de erros. 
+
+Exceção: uma classe/ pode ter uma mensagem no construtor/pode se informar um código/ SPL(Standard PHP Library)/ É possível lançar exceptions através da instanciação de classes exception e o comanado throw/ para pegar mais de uma exception por vez basta colocar "Exception" como argumento/ para criar uma class exception ela deve estender Exception geral ou as classes que herdam a mesma.
+ - LogicException: acontece qunado há um mal uso da linguagem.
+ - RuntimeException: são funções que acontecem no tempo de execução do código.
+
+Error: classe básica que lança qualquer tipo de erro/ criados apenas pelos desenvolvedores internos do php.
+
+finally: O bloco finally é executado mesmo que nos blocos try ou catch existam uma instrução que interrompa a execução do método, como return ou throws.
+	
+
+annotation(/** */): passa informações a mais para o código, não interpretado pelo php/ começam com @ 
+
+POO: se preocupa em desenvolver códigos: 
+
+- Confiável
+- Oportuno
+- Manuteniível
+- Extensivel
+- Reutilizavel 
+- Natural
+
+Classe: molde e classificação dos objetos. Define os atributos e métodos compartilhados entre os objetos, deve ser objetiva/ não pode ser criada sem o namespace qualificado.
+
+OBJETO: possui característica, comportamento, estado. Abstrato ou Concreto, perceptivel aos sentidos.
+
+Instanciar: extrair de uma classe um objeto.
+
+Organização procedural: varios procedimentos realizados em um mesmo código, orientada a funções. 
+
+- 1º Abstração: pega um conceito real e tranforma em um ideal, retirando do conceito real aquilo que não é importante. 1º pilar do POO
+- 2º Encapsulamento: pilar responsável por encapsular o código protegendo a classe de interferências externas.
+- 3º Herança: permite basear uma nova classe na definição de uma outra classe previamente definida, é aplicado tanto para características como para comportamentos (não é necessário haver relação entre herança e encapsulamento).   
+	- classe mãe / progenitora / superclasse.
+	- claase filha / subclasse
+	- Raiz: classe que não possui uma progenitora, ela é única superclasse da árvore genealógica.
+	- Folhas: classes que não possuem subclassesm, apenas progenitoras 
+	- Especialização: processo de se percorrer uma arvore genealógica de de classes de cima para baixo.
+	- Generalização:processo de se percorrer uma árvore genealógica de classes
+		de baixo para cima.    
+- 4ª Polimorfismo: Permite que um mesmo nome represente vários comportamentos diferentes. É a capacidade de um objeto poder ser referenciado de várias formas 
+	- Sobreposição: 
+	- Sobrecarga: 
+
+public: caráter atribuido as intâncias que podem ser acessados por todos.
+
+Instância = Objeto(variável criada a partir de uma classe)
+
+Não se define o valor de cada variavel na classe e sim no objeto.
+
+É possivel definir o tipo da variavel dentro da classe, adicionando uma segurança a mais
+
+->: sinal usado para definir um atributo de um objeto / criação de um objeto: $objeto -> atributo -> valor atribuido
+
+É possivel acessar atributos especificos usando a seguinte estrutura: echo $objeto -> atributo
+
+Por padrão uma instância é passada por referência
+
+Para verificar um atributo dentro de um metodo na própria classe, utiliza-se o $this.
+
+Visibilidade: indica o nível de acesso aos itens de uma classe.
+
++ public = Possui a acesso a classe 
+- private = Só a classe possui acesso.
+
+ Para realizar um encapsulamento é necessário criar uma interface e definir todos os métodos abstratos (não realizados na interface)que ela irá conter,]
+depois basta chamar por eles escrevendo o comando: class nomeClass implements nomeInterface{}, ainterface também declara os parâmetros do método.
+ 
+ Para otimizar a instanciação das classes basta criar um arrey com N elementos e indicar cada elemento como uma nova instância.
+
+Composição de objetos: objetos da classe formados por objetos menores.
+Tipo abstrato de dados: Uma classe pode ter instâncias como atributos. 
+Relacionamentos entre classes do tipo "tem um" é conhecido como agregação.
+Métodos Especiais:
+
+- Métodos Acessores(getters): são os métodos que leberam acesso a uma determinada coisa (normalmente não se passa um parâmetro).
+- Métodos Modificadore(setters): são respónsaveis por garantir a segurança na modificação dos atributos de um objeto(costuma receber um parâmetro).
+- Métodos Contrutores(construct): Cria uma padronização ao se instanciar uma classe.
+- __destruct(): executa uma ação quando uma instância deixa de existir;
+-__toostring(){$this -> getter()}: retorna ovalor de um atributo como string, podendo ser invocado no index com o echo.
+-__trait()
+
+A classe também pode conter atríbutos, são chmados de "static",
+Ele é acessado através do nome da classe: classe::$metodo. Para ter acesso a um private static basta criar uma static function implementada no código por 'echo classe::metodo(). Ao invés de acessa-la utilizando a pseudo-classe $this, basta usar self.
+
+Herança de Implementação / herança pobre: quando uma classe não possui nenhuma assinatura.
+
+Herança para Diferença: Quando uma classe herda artefatos de outra classe e implementa novas funcionalidades.
+
+- Classe Abstrata: Não pode ser instanciada, só pode servir como progenitora. Deve ter ao menos um método imcompleto, se nenhum de seus métodos tiver corpo ela será considerada uma interface. Uma classe pode herdar somente uma classe, pois não há herança múltipla em php.
+- Método abstrato: declarado, mas não implementado na progenitora. Só pode ser declarado em uma interface ou dentro de uma classe abstrata. Só pode ser implementada em uma classe abstrata.
+- Classe Final: Não pode ser herdada por outra classe, é obrigatoriamente folha.
+- Método Final: Não pode ser subrescrito pelas suas sub-classe. Obrigatoriamente herdado.  
+
+Para sobrepor um método na herança basta escrever o método da mesma forma que ele aparece na progenitora. 
+
+Assinatura do método: quantidade e tipos de parâmetros.
+
+paret:: = acessa métodos estáticos da classe progenitora 
+namespace: agrupa classes, interfaces, funções e constantes visando evitar o conflito quando possuem o mesmo nome - spl_autoload_register().
+É uma boa prátca criar repositótios que hospedem os namespaces. Para instanciar uma classe com namespace basta usar o comando: $var = new\namespace\nomedaclasse
+
+
+Se para adicionar melhorias em um código fonte for necessário reescreve-lo, não é uma boa ideia substituir o código já existente, pois isso pode gerer bugs.
+
+PSR(php stadards recommendations): 
+
+- PSR-1: Padrão básico de codificação/ usar apenas um tipo nas propriedades de classe: StudlyCaps, camelCase, under_score.
+
+- PSR-2: Guia de estilo de Codificação.
+
+- PSR-4: Carregamento automático de classes.
+
+DateTime() = classe utilizada para manipulação de horas.
+
+- define("DATE_BR", "d/m/Y H:i:s"): constante de formatação de horas
+- $var = new DateTime("y-m-d") = instância de comuma data pronta. 
+- $var -> format(DATE_BR)
+
+PDOException:
+
+Funções de análise:
+
+get_class($var),
+get_class_methods(),
+get_object_vars(),
+get_parent_class()
+
+
+PDO(php data objects):
+
+Para realizar uma conexão com obanco de dados é necessário saber a string de conexão de cada banco de dados.
+( exemplo: 'mysql:host=endereco_do_servidor;dbname=nome_do_banco')
+Utiliza drivers diferentes para cada banco de dados.
+__DIR__.'caminho = cria um caminho absoluto que será armazenado em uma variável
+$pdo = new PDO(string de conexão,) classe utilizada para fazer uma conexão com um banco de dados.
+$pdo -> exec('comandos sql para criação de tabelas' )
+
+
+
+
+COMPOSER: é um gerenciador de depêndencias do PHP
+
+Para inicia-lo basta escrever "composer init" no cmd.
+
+(<vendor>\<name>): vendor: quem está distribuindo o pacote
+		   nome: Nome do pacote de quem está criando
+
+description: Pede uma descrição do projeto
+minimum stability: questiona se é necessário buscar pacotes em desenvolvimento ou já finalizados.
+
+pakcage type(library, project, metapackage, composer-plugin)
+library = biblioteca
+project = projeto completo
+metapackage = é um projeto vazio só com as informações do composer-Json (esqueleto 'para outros projetos)
+composer-plugin = forma de criar plug-ins para o composer
+
+O código J.son criado pelo composer não é obrigatório caso já se saiba a estrutura, ou caso o arquivo não seja criado para um projeto coletivo.  
+
+global command: caso seja uma depêndencia global.
+
+packagist.org: é o principal repósitorio de pacotes do composer, onde estão agregados os pacotes públicos.
+
+Para adicionar uma paconte basta ir no arquivo json do projeto e colocar o nome e versão do pacote, ou baixar diretamente pelo prompt.
+
+composer.lock armazena todos os pacotes baixados do composer. O comando composer install lê o arquivo composer.lock e instala as exatas dependências lá definidas. Já o comando composer update lê o arquivo composer.json, instala as dependências mais atuais dentro das restrições definidas e atualiza o composer.lock. 
+
+composer update(cmd): atualiza todos os arquivos no composer.lock
+
+O pacotes guzzlehttp/guzzle serve para executar requisições HTTP de alto nível
+
+Para instalar uma dependência (pacote) basta executar: composer require <nome do pacote>
+
+vendor namespace: é o arquivo central onde a classe está hospedada.
+
+exemplo da implementação da psr-4 no arquivocomposer.json:
+ { “autoload”: { “psr-4”: { “Alura\\Namespace\\Padrao\\”: “src/php/code/” } } }
+
+compose dumpautoload(cmd): é o comando para atualizar a leitura dos arquivos no composer.json. 
+
+Com a chave classmap conseguimos informar arquivos que contenham classes para que o Composer as encontre mesmo que não sigam a PSR-4.
+
+O Composer organiza muito bem a pasta vendor e dentro dela há uma pasta chamada bin. Nesta ficam todos os arquivos executáveis que nossas dependências possam fornecer.
+
+As dependências que ficam no ambiente de produção e no ambiente de desenvolvimento são separadas no arquivo composer.json.
+
+--dev(cmd): são arquivos queirãorodar apenas em ambientes de desenvolvimento
+
+phpunit para rodar testes;
+phpcs para verificar padrões de código;
+phan para executar uma análise estática da sintaxe do nosso código. 
+
+composer global require "squizlabs/php_codesniffer=*": é uma ferramenta que auxilia e encontrar erros e sintaxe no código.
+
+- vendor\bin\phpcs --standard=PSR12 src\ : roda o phpcs  
+
+vendor\bin\phan --allow-polyfill-parser: roda o phan
+
+No arquivo composer.json é possível adicionar uma área de scripts para fornecer uma facilidade na hora de chamar as dependências.
+Essas dependências podem ser armazenadas através da inserção do '@' na frente do nome. Um "script-descriptions" permite a descrição de um comando.
+
+É possível escrever comandos novos no composer.json(scripts) e fazer que ele tenha o comportamento que quisermos. Aceita: qualquer código PHP, comandos do sistema operacional
+
+Eventos: com eles, podemos executar scripts em momentos específicos como, por exemplo, ao instalar ou atualizar um pacote.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+

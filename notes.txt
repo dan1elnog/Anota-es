@@ -1,0 +1,37 @@
+202109271245
+202109271245@alunos.estacio.br
+Da25271328!
+
+<http://www.ime.usp.br/~vwsetzer/dado-info.html>
+
+link para atualização do wamp = https://wampserver.aviatechno.net/?lang=en
+
+https://www.php.net/manual/pt_BR/language.types.boolean.php
+
+cep = 33902130
+
+formatacão de pc:
+
+1 - wmic path softwarelicensingservice get oa3xoriginalproductkey - usado no cmd para acessar a chave windows do pc
+
+2 - Fazer o back-up dos arquivos
+
+3 - Baixar a imagem iso do windows em um pen drive.
+
+4 - Fazer o boot com o pendrive da iso 
+
+
+Cria partição no disco rígido: 
+
+Gerenciador de arquivos ->
+
+Clicar como botão direito do mouse em "Este computador" ->
+
+Gerenciar -> 
+
+Gerenciamento de dísco -> 
+
+Botão direito sobre o disco que se deseja particionar ->
+
+Diminuir volume.
+

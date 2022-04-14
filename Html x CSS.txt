@@ -1,0 +1,185 @@
+HTML
+
+Os elementos dentro da tag Body possuem um comportamento padrão sendo exibidos no formato de "caixa", implementam o box-model que representa o total de espaço que um elemento ocupa na tela.
+
+no developer tools é possível ter acesso ao "user agent stylesheet" que representa as definições padrão de uma tag html
+
+Display Inline: o conteúdo ocupa apenas o seu tamanho
+Display Block: o conteúdo ocupa 100% da largura da página.
+
+alt=""(alternative) = usado nas tags img para auxiliar um usuário que possua alguma necessidade visual.
+
+Estrutura para a criação de um DropDown:
+
+<select>
+	<option>Valor</option>
+</select>
+
+Estrutura de uma tabela:
+
+<table>
+    <thead>
+        <th></th>
+    </tehead>
+    <tbody>
+	<tr>
+	   <td></td>	
+	</tr>
+    </tbody>
+</table>
+
+HTML semântico: usado para dar sntidoa um documento html mesmo sem a estilização pelo css/ Semantic elements = elements with a meaning.
+
+
+
+Fonte preparada para a web: tende a ter um melhor comportamento nos navegadores. 
+Para importar um mapa, basta ir no google maps e selecionar a opção: "compartilhar e incorporar mapa"
+
+<iframe> = tag usada para abrir uma "janela" na página
+
+DPI(dots per inch) = quantidade de pixel por polegada
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CSS
+
+classes: Nem tão específica, para poder repetir as classes, e nem tão genérica, para poder não precisar combinar classes.
+
+Hierarquia dos elementos:
+
+ - tag
+ - tag + tag
+ - class
+ - id
+ - style
+
+
+Para copiar uma configuração de um elemento basta usar a vírgula.
+
+cursos: poiter; = altera o desenho do mouse a passar por um elemento
+transform: scale(): cria uma tranformação proporcional em todo o elemento
+transform: rotate(deg): 
+
+n em: médida usada pra aumentar ou diminuiro tamanho de uma fonte proporcionalmente. 
+
+
+pseudo-classes: usadas para referenciar itens específicos no css
+
+.class:first-child, {}:
+       last-child,
+       nth-child(n)	
+       nth-child(2n)/ para casos de estilização em linhas		
+
+.class:first-letter{}: pega a primeira letra do elemento	
+	 first-line()	
+
+.class:after{    = pseudo-classe usada para criar exibições css entre um dado elemento
+	content:
+}  
+.class:before{
+	content:
+}
+
+Seletores avançados:
+
+tag > TAG = referencia todas as tags "filhas"
+
+tag + Tag = referencia a tag após um elemento um elemento
+
+tag ~ Tag = referencia todas as tags após um elemento. 
+
+main p:not(#missao) = exceção 
+
+Gradiente =
+
+background-color: linear-gradient(inclinação(deg),color1,color2)
+			radial
+
+A propriedade calc() permite fazer com que sejam calculadas as proporções de uma página de maneira dinâmica.
+
+Sombras:
+
+opacity: 1-0 = cria uma opacidadeem um dado elemento (todos os elementos podem receber uma camada de opacidade
+
+box-shadow: Xpx Ypx bluer-px color: usado para criar uma sombra no elemento em formato de "caixa" (bluer: referece ao espalhamento da sombra)
+box-shadow: Inset Xpx Ypx bluer-px color: cria uma sombra interna nos elementos
+text-shadow: cria uma sombra para o texto
+
+Media Query:
+
+Solicitações feitas por uma folha de estilo CSS para uma página html, com a finalidade de obter informações que irão mudar o comportamento do CSS
+ 
+@media screen (max-width: 480px) {}
+
+object-position: x y = altera a visualização de um objeto ou imagem baseado nos eixos x e y 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BootStrap:
+
+Flex: ferramenta do css que alinha elementos de forma responsiva e dinâmica
+
+As CDN — sigla em inglês para Content Delivery Network ou Rede de Distribuição de Conteúdo (tradução livre) são redes de conteúdo não centralizadas. Ou seja, elas hospedam um determinado conteúdo em servidores espalhados em várias partes, permitindo dessa forma a distribuição de forma eficaz independente de onde o acesso é realizado.
+
+Os atributos "aria" são para acessibilidade do site
+
+tabindex: permite a seleção de links usando a tecla tab
+
+navbar-toggler: botão "hamburguer" para responsividade do site
+
+O atributo "data-" existe para que possamos adicionar informações customizadas/dinâmicas no DOM, sem utilizar classes nem IDs
+
+data-bs-interval: controla o tempo de mudança de imagem em um carrosel
+
+realse de sintaxe: quando o editor auxilia na visualização de erros
+
+h/w: altura e largura de uma classefiha dentro de uma classe pai
+
+display-n: altera o tamanho de uma fonte
+
+cards: opções de informações a se ultilizar
+
+Para um layout responsivo o bootstrap utiliza grid/ col-size-n: estrutura para habilitar o tamanho do conteúdo, se houver mais de um a soma deve ser igual a 12 
+Para centralizar intens no grid, basta adicionar a classe "justify-content-center" na classe row
+
+container-flui: é um container sem margin
+
+modal: caixinhas que aparecem na tela, diferente do pop-up ele bloqueia tudo que está "atrás".
+
+fixed-top: cola um navbar no topo da página
+
+!important : usado com muita restrição para sobrescrever um css do bootstrap
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Canvas: <canvas></canvas>
+
+moveTo(): define as coordenadas iniciais no canvas
+lineTo(): define as coodenadas do fim de uma linha
+stroke(): desenha uma linha
+rect(): desenha um retângulo
+context.arc(centerX, centerY, radius, startingAngle, endingAngle, counterclockwise: desenha um circulo
+Math.PI: é usado para acessar o valor da constante PI.
+lineWidth: delimita a largura da linha
+strokeStyle = x: determina a cor da linha
+fill(): preenche uma figura
+beginPath(): usado antes de cada forma geometrica
+fillText(text, x, y, width): usado para 
+fillStyle: muda a cor da fonte
+font = '0px family': usado para definir o tamanho e o tipo da fonte, deve vir antes do "fillText"
+
+Para adicionar imagens: 
+var img = nem Image
+img.src='url da imagem'
+img.onload = function(){
+    img.drawImage()
+}
+
+setInterval: chama outra função periodicamente
+
+
+
+
+
+
+
+
+

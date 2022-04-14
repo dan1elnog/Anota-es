@@ -1,0 +1,116 @@
+Pensamento Computacional:
+- Abstração
+- Reconhecimento de Padrões
+- Algoritmo
+- Decomposição	
+
+Hexadecimal = utiliza 10 números e as 6 primeiras letras do alfabeto
+
+Desenvolvimento: Análise, Algoritmo, Codificação
+
+Alto acoplamento = caracteiristica de uma classe de ser altamente dependente de outra classe, realizando tarefas que não são da sua alçada, tendo como uma solução a inversão de controle e o uso da injeção de dependências.
+
+Coesão: ligado ao pricípio da responsabilidade unica, uma classe deve realizar apenas o trabalho que lhe foi delegado. 
+
+Uma unidade de dados de hipertextos é chamada de web page, um grupo de webpages que compartilham caracterisitcas em comum da origem a um website(browsers fazem o download de websites).
+
+Graphical User Interface (GUI) / Command Line Interface (CLI)/ There are two ways of interacting with the OS: one is more verbal while the other is more visual
+
+Logs = responsaveis por catalogar o ciclo de execução de um program, auxlia gerenciadores de rede a terem um insumo de quando uma daterminada rede foi invadida 
+
+Desenvolvimento Web: nome dado ao processo de criação de sites e aplicações na web.
+
+Estrutura de uma URL:<protocol>://<domain>/<path>?<request parameters>#<anchor>
+Utiliza a porta 80 como padrão e a alternativa é a 8080, no caso do protocolo HTTPS a porta é a 443
+
+HTTP:
+
+- independe de plataforma de desenvolvimento
+- foi feito para estabelecer regras de comunicação entre o modelo Cliente-Servidor que funciona na Web.
+HTTPS: utiliza uma camada a mais de segurança SSL(Secure Socket Layer)/TLS (Transport Layer Security)
+- nossos dados são enviados em texto puro, ficando visível para qualquer um que consiga interceptar nossa conexão
+Sessão HTTP: É o tempo que o cliente utiliza um web app
+
+Internet = rede mundial que liga todos os computadores do mundo
+URI: Uniform Resource Identifier
+URLs são um subconjunto do conjunto de URIs
+WWW = ferramenta utilizada para o compartilhamento de hipertextos que possuem links para outros hipertextos. User -> internet -> Web
+
+API = exposição de dados entre aplicações
+(Hypermidia As The Engine Of the Application State) HATEOAS: Este componente de uma API é o que diferencia o padrão REST de qualquer outro padrão de arquitetura. Fornecer informações para que o cliente consiga navegar entre os nossos recursos é extremamente útil e pode facilitar (e muito) a utilização da nossa solução.
+
+REST(Representational State Tranfer)/Definida por roy Fielding/"através de uma api se transfere estado":
+REST é um padrão arquitetural, que define regras como acessar/publicar um recurso
+
+- Princípios de aplicações distribuídas 
+- Tem como pricípio que a comunicação ocorra entre clientes e servidores
+- Stateless(sem estado),não guardam dados em sessões, para saber que as requisições de um usuário possuem uma sessão própria é colocado um número idetificador (cookie) na máquina cliente - essa pártica não é comtemplada pelo REST, que diz que um servidor não deve quardar dados de uma conexão ativa de clientes - para solucionar esse problema o cliente pode utilizar o JWT(jason web token) onde os dados da sessão do cliente ficam armazenados em sua própria máquina.
+- Interface Uniforme(Linguagem comum entre os clientes e os servidores), o cliente faz uma requisição via verbo HTTP e o servidor retorna um número de status HTTP.
+- A URL(Uniform Resources Locator) é responsável por identificar recursos
+
+Recursos: dados manipulados através de API's REST
+
+Response class:     
+2xx = Requisição processada com sucesso
+3xx = Indica para o cliente uma ação que deve ser tomada para que a requisição seja realizada com sucesso 
+4xx = Indica erros na requisição causadas pelo cliente
+5xx = Requisição não realizada por erros ocorridos no servidor
+
+CLI:
+
+dir/ls
+cd / = volta ao diretório root
+silence on success
+mkdir = cria um diretório
+echo name > name.extension = cria um arquivo no diretório selecionado
+del dir = deleta o arquivos do diretório selecionado
+rmdir dir = removeum diretório
+
+SCRUM: framework de gerenciamento de projetos ágeis
+
+- Transparência
+- Adaptação
+- Inspeção
+
+Equipes capazes de se auto-organizarem / todos são responsáveis pelas tarefas / forte comprometimento com os resultados 
+
+Time: 3-9 pessoas
+
+Transformação digital: processo na qual as empresas fazem o uso da tecnologia para melhorar o desenpenho, e garantir melhores resultados
+
+- Product Owner(PO): Representante da área de negócios, define as funcionalidades do software, explica o que o time de desenvolvimento deve fazer, tema visão do que será desenvolvido e as necessidades a serem atendidas
+- SCRUM master(SM): garantir o o uso correto do SCRUM, age como facilitador, treina o time em autogerenciamento e interdisciplinaridade/ Treina um time até que ele se torne dispensável.
+- Time de Desenvolvimento(DEV)
+
+MVP = Minimum Viable Product
+
+20% de um software é de fato utilizado pelo cliente (Príncipio de Pareto: 20% do uso gera 80% da produtividade)
+
+Utiliza equipes pequenas e multidisciplinares
+
+Tradicional (Waterfall) = o projeto só pode avançar se a fase anterior tiver sido concluída.
+
+Ágil = O desenvolvimento é dividido em partes (incremental) e cada parte pertenc ea um determinado ciclo (iterativo)/ rapidez(mudança), ter a capacidade de responder rapidamente as mudanças/ fazer coisas complexas de forma simples/ equipe comprometida com os objetivos.
+
+Time box: Tempo máximo para fazer uma cerimônia ou Sprint (8h)
+Sprint: "corrida, arrancada" principal evento do SCRUM(30 dias corridos) 
+- Daily Meeting (To do, Doing, Done / Stand Up / 15min)
+- Review
+- Retrospectiva(Acontece uma vez na sprint)
+- Release Planning: Liberação ou lançamento do software
+
+Product Backlog:
+- Épicos: Incremento sem muito detalhamento.
+- Estória: Detalhamento dos épicos, um épico geralmente se divide em várias estórias
+- Tarefas: conjunto de Estórias
+
+Merge = junção dos códigos fontes ao final da sprint
+
+Cerimônias do SCRUM
+
+
+Patterns:
+
+Observable: um evento é emitido e outras partes do código ficam "observando" para realizarem uma determindada ação.
+
+Pair programming

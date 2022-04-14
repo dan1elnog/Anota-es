@@ -1,0 +1,3 @@
+"The Web turned data into the gold of the 21st century"
+mkdir name = cria um novo folder no diretório selecionado
+cd / = retona ao diretório raiz
